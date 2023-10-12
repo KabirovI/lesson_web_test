@@ -6,6 +6,8 @@ class Locator:
     xpath_frame_search = (By.XPATH, '//iframe[contains(@class, "search-arrow__frame")]')
     xpath_input_search = (By.XPATH, '//input[contains(@class, "arrow__input")]')
     id_button_search = (By.XPATH, '//button[@data-testid="search-button"]')
+    id_tab_games = (By.XPATH, '//a[@data-testid="news-tabs-tab-item-games"]')
+
 
 
 class ActionsInMainPage(FWBase):
@@ -22,3 +24,7 @@ class ActionsInMainPage(FWBase):
 
     def click_button_search(self):
         self.click_element(Locator.id_button_search)
+
+    def click_tab_games(self):
+        self.click_element(Locator.id_tab_games)
+        return self

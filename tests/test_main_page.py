@@ -16,3 +16,7 @@ class TestMainPage(TestBase):
         time.sleep(1)
         assert 'https://mail.ru/search' in self.APP.actions_in_main_page.get_current_url()
         assert self.APP.actions_in_page_search.get_text_tab_search() == "поиск"
+
+    def test_go_to_tab_games(self):
+        self.APP.actions_in_main_page.click_tab_games()
+        assert self.APP.actions_in_main_page.get_text_on_tab_games() == "Игры"
